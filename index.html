@@ -6,22 +6,34 @@
         <script src="./script.js" defer></script>
         <link rel="stylesheet" href="./styles.css">
         <title>Etch-a-sketch</title>
+        <script src="https://kit.fontawesome.com/eae7b557f8.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="setting">
-            <input type="color" class="colorPicker" value="#d0f0c0">
-            <button class="clear-btn hover-btn">Clear</button>
-            <button class="rainbow-btn hover-btn">Rainbow</button>
-            <div class="range">
-                <input type="range" class="pixelPicker"
-                min="1" max="100",value="50", step="1">
-                <div class="sliderValueWrapper">
-                    <span class="sliderValue">50</span>
+        <div class="content">
+            <div class="setting">
+                <input type="color" class="colorPicker" value="#d0f0c0">
+                <button class="clear-btn hover-btn">Clear</button>
+                <button class="rainbow-btn hover-btn">Rainbow</button>
+                <div class="range">
+                    <input type="range" class="pixelPicker"
+                    min="1" max="100",value="50", step="1">
+                    <div class="sliderValueWrapper">
+                        <span class="sliderValue">50</span>
+                    </div>
                 </div>
             </div>
+            <div class="grids">
+            </div>
         </div>
-        <div class="grids">
-        </div>
+        <footer>
+            <p>Copyright © 2023 mekintown</p>
+            <a href="https://github.com/mekintown" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://instragram.com/mekintown" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </footer>
     </body>
 </html>
 
