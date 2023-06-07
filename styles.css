@@ -143,6 +143,7 @@ input[type='color']::-moz-color-swatch {
     left: -100%;
     top: -560%;
     animation: spin 1.5s infinite;
+    border-radius: 10px;
 }
 
 .rainbow-btn {
