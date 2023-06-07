@@ -4,8 +4,10 @@ const slideValue = document.querySelector(".sliderValue");
 const pixelPicker = document.querySelector(".pixelPicker");
 const root = document.querySelector(":root");
 const clearBtn = document.querySelector(".clear-btn")
+const rainbowBtn = document.querySelector(".rainbow-btn");
 
 let isMouseDown = false;
+let isRainbowBtnClicked = false;
 
 createGrid(pixelPicker.value);
 
@@ -24,11 +26,25 @@ function createGrid(pixel) {
         })
         grid.addEventListener('mousemove', (e) => {
             if(!isMouseDown) return;
-            grid.style.setProperty('background-color', `${colorPicker.value}`);
+            if (isRainbowBtnClicked) {
+                grid.style.setProperty('background-color', getRandomColor());
+            }
+            else {
+                grid.style.setProperty('background-color', `${colorPicker.value}`);
+            }
         })
         grids.appendChild(grid);
     }
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
 pixelPicker.addEventListener('input', () => {
     slideValue.textContent = pixelPicker.value;
@@ -42,4 +58,9 @@ colorPicker.addEventListener('input', () => {
 
 clearBtn.addEventListener('click', () => {
     createGrid(pixelPicker.value);
+})
+
+rainbowBtn.addEventListener('click', () => {
+    isRainbowBtnClicked = !isRainbowBtnClicked
+    rainbowBtn.classList.toggle("rainbow");
 })

@@ -37,7 +37,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 20px
+    gap: 20px;
 }
 
 
@@ -106,8 +106,10 @@ input[type='color']::-moz-color-swatch {
     cursor:col-resize;
   }
 
-.clear-btn {
+.clear-btn,
+.rainbow-btn {
     align-self: stretch;
+    position: relative;
     padding: 10px;
     border-radius: 10px;
     border: none;
@@ -116,8 +118,50 @@ input[type='color']::-moz-color-swatch {
     transition: transform 0.1s ease-in-out;
 }
 
-.clear-btn:hover {
+.hover-btn:hover {
     background-color: rgb(224, 224, 224);
     transform: scale(1.05);
+}
+
+.rainbow::before {
+    content: " ";
+    position: absolute;
+    width: 300%;
+    height: 1200%;
+    background: conic-gradient(
+        #fd004c,
+        #fe9000,
+        #fff020,
+        #3edf4b,
+        #3363ff,
+        #b102b7,
+        #fd004c
+    );
+    left: -100%;
+    top: -560%;
+    animation: spin 1.5s infinite;
+}
+
+.rainbow-btn {
+    overflow: hidden;
+}
+
+.rainbow::after {
+    content: "Rainbow";
+    position: absolute;
+    display: grid;
+    place-items: center;
+    background-color: white;
+    height: 85%;
+    width: 97%;
+    top: 5.5%;
+    left: 1.5%;
+    border-radius: 10px;
+}
+
+@keyframes spin {
+    100%{
+        transform: rotate(-360deg);
+    }
 }
   
