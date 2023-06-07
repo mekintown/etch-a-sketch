@@ -50,7 +50,12 @@ input[type='color'] {
     width: 150px;
     height: 150px;
     cursor: pointer;
+    transition: transform 0.1s ease-in-out;
   }
+
+input[type='color']:hover {
+    transform: scale(1.05);
+} 
   
   
 input[type='color']::-webkit-color-swatch {
@@ -98,5 +103,21 @@ input[type='color']::-moz-color-swatch {
 .pixelPicker {
     width: 80px;
     accent-color: var(--primary-clr);
+    cursor:col-resize;
   }
+
+.clear-btn {
+    align-self: stretch;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    transition: transform 0.1s ease-in-out;
+}
+
+.clear-btn:hover {
+    background-color: rgb(224, 224, 224);
+    transform: scale(1.05);
+}
   

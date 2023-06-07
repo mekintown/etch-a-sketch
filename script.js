@@ -3,10 +3,11 @@ const colorPicker = document.querySelector(".colorPicker");
 const slideValue = document.querySelector(".sliderValue");
 const pixelPicker = document.querySelector(".pixelPicker");
 const root = document.querySelector(":root");
+const clearBtn = document.querySelector(".clear-btn")
 
 let isMouseDown = false;
 
-createGrid(50);
+createGrid(pixelPicker.value);
 
 function createGrid(pixel) {
     grids.style.setProperty('grid-template-rows', `repeat(${pixel}, 1fr)`);
@@ -38,3 +39,7 @@ colorPicker.addEventListener('input', () => {
     pixelPicker.style.setProperty('accent-color', `${colorPicker.value}`);
     slideValue.style.setProperty('background-color', `${colorPicker.value}`);
 });
+
+clearBtn.addEventListener('click', () => {
+    createGrid(pixelPicker.value);
+})
